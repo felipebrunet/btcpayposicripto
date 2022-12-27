@@ -25,7 +25,7 @@ De esta forma el locatario ya puede operar su terminal de pago directamente con 
 El proyecto es 100% abierto. Cualquiera lo puede clonar, mejorar, hacer PRs, instalar en su dispositivo, subir a play store, criticar, basurear, etc. 
 
 Gracias a todos los que han hecho posible que esta aplicacion funcione: 
-Muchos youtubers que muestran como hacer apps en android studio con Kotlin.
+- Muchos youtubers que muestran como hacer apps en android studio con Kotlin.
 - Desarrolladores de BTCPAY Server.
 - Desarrolladores de LNBITS.
 - Desarrolladores de Umbrel.
