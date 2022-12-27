@@ -26,11 +26,11 @@ El proyecto es 100% abierto. Cualquiera lo puede clonar, mejorar, hacer PRs, ins
 
 Gracias a todos los que han hecho posible que esta aplicacion funcione: 
 Muchos youtubers que muestran como hacer apps en android studio con Kotlin.
-Desarrolladores de BTCPAY Server.
-Desarrolladores de LNBITS.
-Desarrolladores de Umbrel.
-Desarrolladores de LND de Lightning Labs.
-Desarrolladores de Bitcoin.
+- Desarrolladores de BTCPAY Server.
+- Desarrolladores de LNBITS.
+- Desarrolladores de Umbrel.
+- Desarrolladores de LND de Lightning Labs.
+- Desarrolladores de Bitcoin.
 Gracias totales!!!
 
 Y obviamente 21 millones de gracias a Satoshi Nakamoto
