@@ -2,14 +2,10 @@ package com.example.btcpayposicripto
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 
@@ -20,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_BtcpayPOSIcripto)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val storeURL = "https://btcpay.icripto.cl/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
         val input: TextView = findViewById(R.id.input)
         val buttonBotondepago: Button = findViewById(R.id.link_twitter)
         val button1: Button = findViewById(R.id.button_1)
@@ -37,14 +33,14 @@ class MainActivity : AppCompatActivity() {
         val buttonBorrar: Button = findViewById(R.id.button_borrar)
         val option : Spinner = findViewById(R.id.spinner_currencies)
         val options = arrayOf("CLP", "USD", "ARS", "EUR", "BRL", "BTC")
-        var moneda = "CLP"
+        var monedaPredefined = "CLP"
 
         option.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, options)
         option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                moneda = options[p2]
+                monedaPredefined = options[p2]
             }
         }
 
@@ -104,7 +100,8 @@ class MainActivity : AppCompatActivity() {
                 try {
                     val price: Float = input.text.toString().toFloat()
                     if (price > 0) {
-                        val urlIcripto = "https://btcpay.icripto.cl/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH&price=${price}&currency=${moneda}"
+//                        val urlIcripto = "http://guibnloxo4hwe3ashh2rlg2abqqykzhldmsbcqne2togzdrdja22ohyd.onion/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH&price=${price}&currency=${monedaPredefined}"
+                        val urlIcripto = "${storeURL}&price=${price}&currency=${monedaPredefined}"
                         startActivity(Intent.parseUri(urlIcripto, 0))
                     }
                 } catch (e: Exception) {
