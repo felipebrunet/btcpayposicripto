@@ -13,13 +13,14 @@
         android:id="@+id/input"
         android:layout_width="260dp"
         android:layout_height="72dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/myborder"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:text="0"
@@ -211,6 +212,31 @@
         app:layout_constraintEnd_toStartOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input" />
+
+    <Button
+        android:id="@+id/botonAjustes"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:text="⚙️"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/input" />
+
+
+    <TextView
+        android:id="@+id/tituloLocal"
+        android:layout_width="324dp"
+        android:layout_height="39dp"
+        android:text="@string/nombre_tienda"
+        android:background="@color/gray1"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadAjustes">
+
+
+    <TextView
+        android:id="@+id/TextoAjustes"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:text="@string/texto_ajustes"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/myborder"
+        app:layout_constraintBottom_toTopOf="@+id/TextoServidor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextoAjustes">
+
+        <Spinner
+            android:id="@+id/spinner_currencies2"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:spinnerMode="dropdown" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/seleccione_moneda"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/TextoServidor"
+        app:layout_constraintStart_toStartOf="@+id/TextoServidor"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
+
+
+    <TextView
+        android:id="@+id/TextoServidor"
+        android:layout_width="348dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:text="@string/ingrese_servidor"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+    <EditText
+        android:inputType="textUri"
+        android:id="@+id/URLServicio"
+        android:layout_width="349dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="10dp"
+        android:gravity="top"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/TextoServidor"
+        app:layout_constraintStart_toStartOf="@+id/TextoServidor"
+        app:layout_constraintTop_toBottomOf="@+id/TextoServidor"
+        tools:text="Hola" />
+
+
+    <TextView
+        android:id="@+id/TextoIDTienda"
+        android:layout_width="348dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:text="@string/ingrese_id_tienda"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/URLServicio"
+        app:layout_constraintStart_toStartOf="@+id/URLServicio"
+        app:layout_constraintTop_toBottomOf="@+id/URLServicio" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/IDTienda"
+        android:layout_width="349dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/TextoIDTienda"
+        app:layout_constraintStart_toStartOf="@+id/TextoIDTienda"
+        app:layout_constraintTop_toBottomOf="@+id/TextoIDTienda" />
+
+
+    <TextView
+        android:id="@+id/TextoNombRestaurant"
+        android:layout_width="348dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:text="@string/ingrese_nombre_local"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/IDTienda"
+        app:layout_constraintStart_toStartOf="@+id/IDTienda"
+        app:layout_constraintTop_toBottomOf="@+id/IDTienda" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/NRestaurant"
+        android:layout_width="349dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/TextoNombRestaurant"
+        app:layout_constraintStart_toStartOf="@+id/TextoNombRestaurant"
+        app:layout_constraintTop_toBottomOf="@+id/TextoNombRestaurant" />
+
+
+    <Button
+        android:id="@+id/botonGuardar"
+        android:layout_width="172dp"
+        android:layout_height="72dp"
+        android:text="@string/texto_guardar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NRestaurant" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
