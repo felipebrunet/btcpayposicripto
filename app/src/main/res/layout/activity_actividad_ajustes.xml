@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/io_background"
     tools:context=".ActividadAjustes">
 
 
     <TextView
         android:id="@+id/TextoAjustes"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/green"
+        android:layout_height="80dp"
+        android:background="@color/io_background"
         android:gravity="center"
         android:text="@string/texto_ajustes"
         android:textSize="40sp"
@@ -71,12 +72,13 @@
         android:layout_width="349dp"
         android:layout_height="96dp"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:hint="@string/URL_servidor_BTCPay"
         android:gravity="top"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/TextoServidor"
         app:layout_constraintStart_toStartOf="@+id/TextoServidor"
-        app:layout_constraintTop_toBottomOf="@+id/TextoServidor"
-        tools:text="Hola" />
+        app:layout_constraintTop_toBottomOf="@+id/TextoServidor" />
 
 
     <TextView
@@ -94,13 +96,17 @@
     <EditText
         android:inputType="text"
         android:id="@+id/IDTienda"
+        android:background="@color/white"
         android:layout_width="349dp"
-        android:layout_height="30dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:hint="@string/ID_local"
+        android:textSize="15sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/TextoIDTienda"
         app:layout_constraintStart_toStartOf="@+id/TextoIDTienda"
         app:layout_constraintTop_toBottomOf="@+id/TextoIDTienda" />
+
 
 
     <TextView
@@ -117,11 +123,14 @@
 
     <EditText
         android:inputType="text"
-        android:id="@+id/NRestaurant"
+        android:id="@+id/NLocal"
+        android:background="@color/white"
+        android:hint="@string/tip_nombre_local"
         android:layout_width="349dp"
-        android:layout_height="30dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/TextoNombRestaurant"
         app:layout_constraintStart_toStartOf="@+id/TextoNombRestaurant"
         app:layout_constraintTop_toBottomOf="@+id/TextoNombRestaurant" />
@@ -129,17 +138,28 @@
 
     <Button
         android:id="@+id/botonGuardar"
-        android:layout_width="172dp"
-        android:layout_height="72dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="@string/texto_guardar"
+        android:backgroundTint="@color/gray1"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NLocal" />
+
+    <Button
+        android:id="@+id/botonVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/texto_volver"
+        android:backgroundTint="@color/gray1"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NRestaurant" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/botonGuardar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

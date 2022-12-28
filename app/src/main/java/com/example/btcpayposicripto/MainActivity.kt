@@ -16,6 +16,17 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_BtcpayPOSIcripto)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val nombreLocalInicial : String = findViewById<TextView>(R.id.tituloLocal).text.toString()
+
+
+
+        val adjustScreenButton = findViewById<Button>(R.id.botonAjustes)
+        adjustScreenButton.setOnClickListener {
+            val intent = Intent(this,ActividadAjustes::class.java)
+            intent.putExtra("data", nombreLocalInicial)
+            startActivity(intent)
+        }
         val storeURL = "https://btcpay.icripto.cl/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
         val input: TextView = findViewById(R.id.input)
         val buttonBotondepago: Button = findViewById(R.id.link_twitter)
@@ -33,6 +44,16 @@ class MainActivity : AppCompatActivity() {
         val buttonBorrar: Button = findViewById(R.id.button_borrar)
         val option : Spinner = findViewById(R.id.spinner_currencies)
         val options = arrayOf("CLP", "USD", "ARS", "EUR", "BRL", "BTC")
+
+        val nombreLocal : String = intent.getStringExtra("data") ?: ""
+
+        val nombreLocalText : TextView = findViewById(R.id.tituloLocal)
+        if (nombreLocal != "") {
+            nombreLocalText.text = nombreLocal
+        }
+
+
+
         var monedaPredefined = "CLP"
 
         option.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, options)
