@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                     val price: Float = input.text.toString().toFloat()
                     if (price > 0) {
 //                        val urlIcripto = "http://guibnloxo4hwe3ashh2rlg2abqqykzhldmsbcqne2togzdrdja22ohyd.onion/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH&price=${price}&currency=${monedaPredefined}"
-                        val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&currency=${moneda}"
+                        val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&checkoutDesc=${nombreLocal}&currency=${moneda}"
                         startActivity(Intent.parseUri(urlIcripto, 0))
                     }
                 } catch (e: Exception) {

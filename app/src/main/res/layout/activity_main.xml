@@ -12,14 +12,14 @@
         android:id="@+id/input"
         android:layout_width="260dp"
         android:layout_height="72dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/myborder"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/moneda"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tituloLocal"
         tools:text="0"
         tools:visibility="visible" />
 
@@ -27,14 +27,15 @@
         android:id="@+id/tableLayout"
         android:layout_width="330dp"
         android:layout_height="350dp"
-        android:layout_margin="30dp"
+
+        android:layout_marginTop="5dp"
         android:background="@drawable/myborder2"
         android:gravity="bottom"
         android:orientation="vertical"
         android:stretchColumns="*"
-        app:layout_constraintBottom_toTopOf="@+id/link_twitter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moneda">
 
         <TableRow>
 
@@ -151,14 +152,14 @@
         android:id="@+id/link_twitter"
         android:layout_width="260dp"
         android:layout_height="76dp"
-        android:layout_marginBottom="15dp"
         android:backgroundTint="@color/gray1"
         android:text="@string/boton_pagar"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/textView"
@@ -181,12 +182,12 @@
 
     <TextView
         android:id="@+id/moneda"
-        android:layout_width="120dp"
-        android:layout_height="44dp"
+        android:layout_width="127dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/myborder"
         android:gravity="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/input" />
 
@@ -198,9 +199,8 @@
         android:gravity="center"
         android:text="@string/moneda_seleccionada"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toStartOf="@+id/moneda"
-        app:layout_constraintTop_toBottomOf="@+id/input" />
+        app:layout_constraintTop_toTopOf="@+id/moneda" />
 
     <Button
         android:id="@+id/botonAjustes"
@@ -217,11 +217,11 @@
         android:id="@+id/tituloLocal"
         android:layout_width="324dp"
         android:layout_height="39dp"
+        android:layout_marginTop="10dp"
         android:background="@color/gray1"
-        android:textColor="@color/white"
         android:gravity="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
