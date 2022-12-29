@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 
 
@@ -15,16 +16,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_BtcpayPOSIcripto)
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(R.layout.activity_main)
-
-        val nombreLocalInicial : String = findViewById<TextView>(R.id.tituloLocal).text.toString()
+        
 
 
 
         val adjustScreenButton = findViewById<Button>(R.id.botonAjustes)
         adjustScreenButton.setOnClickListener {
             val intent = Intent(this,ActividadAjustes::class.java)
-            intent.putExtra("data", nombreLocalInicial)
             startActivity(intent)
         }
         val storeURL = "https://btcpay.icripto.cl/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
