@@ -27,7 +27,6 @@
         android:id="@+id/tableLayout"
         android:layout_width="330dp"
         android:layout_height="350dp"
-
         android:layout_marginTop="5dp"
         android:background="@drawable/myborder2"
         android:gravity="bottom"

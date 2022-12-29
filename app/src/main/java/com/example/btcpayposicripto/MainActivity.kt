@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         val input: TextView = findViewById(R.id.input)
         val buttonBotondepago: Button = findViewById(R.id.link_twitter)
         val button1: Button = findViewById(R.id.button_1)
@@ -47,20 +46,20 @@ class MainActivity : AppCompatActivity() {
         val defaultServer = "https://btcpay.icripto.cl"
         val defaultStoreId = "D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
 
-
+//        Loading preexisting settings. If there are none, then load the default (view the "default... constants) values.
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
-        val nombreLocal = intent.getStringExtra("data1") ?: sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
+        val nombreLocal = sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
+//        val nombreLocal = intent.getStringExtra("data1") ?: sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
         val moneda = intent.getStringExtra("data2") ?: sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
         val server = intent.getStringExtra("data3") ?: sharedPreferences.getString("LOCALSERVER", defaultServer).toString()
         val localID = intent.getStringExtra("data4") ?: sharedPreferences.getString("LOCALID", defaultStoreId).toString()
 
 
-
-
-//        findViewById<TextView>(R.id.moneda).setText(monedaPredefined)
         findViewById<TextView>(R.id.moneda).text = moneda
         findViewById<TextView>(R.id.tituloLocal).text = nombreLocal
 
+
+//        Setting the functions of buttons
         buttonBorrar.setOnClickListener {
             input.text = ""
             input.setTextColor(ContextCompat.getColor(this, R.color.black))
@@ -109,12 +108,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+//        Setting the function of the "Pay" button
         buttonBotondepago.setOnClickListener{
             if (input.text.isNotEmpty()) {
                 try {
                     val price: Float = input.text.toString().toFloat()
                     if (price > 0) {
-//                        val urlIcripto = "http://guibnloxo4hwe3ashh2rlg2abqqykzhldmsbcqne2togzdrdja22ohyd.onion/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH&price=${price}&currency=${monedaPredefined}"
                         val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&checkoutDesc=${nombreLocal}&currency=${moneda}"
                         startActivity(Intent.parseUri(urlIcripto, 0))
                     }
@@ -127,6 +127,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+//    Generic function for adding text to the checkout screen
     private fun addToInputText(buttonValue: String, input: TextView): String {
         return "${input.text}$buttonValue"
     }

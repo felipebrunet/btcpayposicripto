@@ -15,17 +15,24 @@ class ActividadAjustes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad_ajustes)
 
+        findViewById<TextView>(R.id.servidorActualValor).setTextIsSelectable(true)
+        findViewById<TextView>(R.id.IDActualValor).setTextIsSelectable(true)
+
         val defaultMoneda = "CLP"
-        val defaultRestaurant = ""
+        val defaultLocal = "Restaurant A"
         val defaultServer = "https://btcpay.icripto.cl"
         val defaultStoreId = "D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
 
 
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
-        val savedLocal: String? = sharedPreferences.getString("LOCALNOMBRE", defaultRestaurant)
+        val savedLocal: String? = sharedPreferences.getString("LOCALNOMBRE", defaultLocal)
         val savedMoneda: String? = sharedPreferences.getString("LOCALMONEDA", defaultMoneda)
         val savedServer: String? = sharedPreferences.getString("LOCALSERVER", defaultServer)
         val savedID: String? = sharedPreferences.getString("LOCALID", defaultStoreId)
+
+        findViewById<TextView>(R.id.servidorActualValor).text = savedServer
+        findViewById<TextView>(R.id.IDActualValor).text = savedID
+
 
 
         findViewById<EditText>(R.id.NLocal).setText(savedLocal)

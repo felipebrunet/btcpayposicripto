@@ -70,7 +70,7 @@
         android:inputType="textUri"
         android:id="@+id/URLServicio"
         android:layout_width="349dp"
-        android:layout_height="96dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:hint="@string/URL_servidor_BTCPay"
@@ -78,7 +78,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/TextoServidor"
         app:layout_constraintStart_toStartOf="@+id/TextoServidor"
-        app:layout_constraintTop_toBottomOf="@+id/TextoServidor" />
+        app:layout_constraintTop_toBottomOf="@+id/TextoServidor"
+        android:autofillHints="" />
 
 
     <TextView
@@ -98,14 +99,15 @@
         android:id="@+id/IDTienda"
         android:background="@color/white"
         android:layout_width="349dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:gravity="top"
         android:layout_marginTop="10dp"
         android:hint="@string/ID_local"
         android:textSize="15sp"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/TextoIDTienda"
         app:layout_constraintStart_toStartOf="@+id/TextoIDTienda"
-        app:layout_constraintTop_toBottomOf="@+id/TextoIDTienda" />
+        app:layout_constraintTop_toBottomOf="@+id/TextoIDTienda"
+        android:autofillHints="" />
 
 
 
@@ -127,13 +129,14 @@
         android:background="@color/white"
         android:hint="@string/tip_nombre_local"
         android:layout_width="349dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:textSize="15sp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/TextoNombRestaurant"
         app:layout_constraintStart_toStartOf="@+id/TextoNombRestaurant"
-        app:layout_constraintTop_toBottomOf="@+id/TextoNombRestaurant" />
+        app:layout_constraintTop_toBottomOf="@+id/TextoNombRestaurant"
+        android:autofillHints="" />
 
 
     <Button
@@ -145,7 +148,6 @@
         android:backgroundTint="@color/gray1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NLocal" />
 
@@ -160,6 +162,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonGuardar" />
+
+
+    <TextView
+        android:id="@+id/servidorActual"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/servidor_actual"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonVolver" />
+
+    <TextView
+        android:id="@+id/servidorActualValor"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/servidorActual"
+        app:layout_constraintTop_toTopOf="@+id/servidorActual" />
+
+    <TextView
+        android:id="@+id/IDActual"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/id_actual"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servidorActual" />
+
+    <TextView
+        android:id="@+id/IDActualValor"
+        android:layout_width="260dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/IDActual"
+        app:layout_constraintTop_toTopOf="@+id/IDActual" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
