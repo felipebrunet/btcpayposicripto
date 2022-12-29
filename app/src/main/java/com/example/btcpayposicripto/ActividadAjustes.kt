@@ -26,28 +26,30 @@ class ActividadAjustes : AppCompatActivity() {
 
         val option : Spinner = findViewById(R.id.spinner_currencies2)
         val options = arrayOf("CLP", "USD", "ARS", "EUR", "BRL", "BTC")
-        var monedaPredefinedAux = "CLP"
+        var moneda1 = "CLP"
 
         option.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, options)
         option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                monedaPredefinedAux = options[p2]
+                moneda1 = options[p2]
             }
         }
         val guardarButton = findViewById<Button>(R.id.botonGuardar)
         guardarButton.setOnClickListener {
-            openMainActivitySaved()
+            openMainActivitySaved(moneda1)
         }
 
     }
 
-    private fun openMainActivitySaved() {
+    private fun openMainActivitySaved(moneda : String) {
         val editTextLocal = findViewById<EditText>(R.id.NLocal)
         val local = editTextLocal.text.toString()
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("data2", moneda)
         intent.putExtra("data", local)
+
         startActivity(intent)
     }
 }

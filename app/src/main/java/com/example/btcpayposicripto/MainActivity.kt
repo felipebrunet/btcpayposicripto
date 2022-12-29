@@ -18,15 +18,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(R.layout.activity_main)
-        
-
-
 
         val adjustScreenButton = findViewById<Button>(R.id.botonAjustes)
         adjustScreenButton.setOnClickListener {
             val intent = Intent(this,ActividadAjustes::class.java)
             startActivity(intent)
         }
+
         val storeURL = "https://btcpay.icripto.cl/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
         val input: TextView = findViewById(R.id.input)
         val buttonBotondepago: Button = findViewById(R.id.link_twitter)
@@ -42,11 +40,12 @@ class MainActivity : AppCompatActivity() {
         val button0: Button = findViewById(R.id.button_0)
         val buttonDot: Button = findViewById(R.id.button_dot)
         val buttonBorrar: Button = findViewById(R.id.button_borrar)
-        val option : Spinner = findViewById(R.id.spinner_currencies)
-        val options = arrayOf("CLP", "USD", "ARS", "EUR", "BRL", "BTC")
+//        var monedaPredefined = "CLP"
 
         val nombreLocal : String = intent.getStringExtra("data") ?: ""
-
+        val monedaPredefined = intent.getStringExtra("data2") ?: "CLP"
+        val cuadroMoneda: TextView = findViewById(R.id.moneda)
+        cuadroMoneda.text = monedaPredefined
         val nombreLocalText : TextView = findViewById(R.id.tituloLocal)
         if (nombreLocal != "") {
             nombreLocalText.text = nombreLocal
@@ -54,16 +53,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        var monedaPredefined = "CLP"
+//        var monedaPredefined = "CLP"
 
-        option.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, options)
-        option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-            }
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                monedaPredefined = options[p2]
-            }
-        }
 
 
         buttonBorrar.setOnClickListener {

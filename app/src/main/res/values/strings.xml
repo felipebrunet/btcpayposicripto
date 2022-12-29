@@ -14,10 +14,13 @@
     <string name="dot">.</string>
     <string name="_0">0</string>
     <string name="borrar">Borrar</string>
-    <string name="seleccione_moneda">Seleccione moneda:</string>
+    <string name="moneda_seleccionada">Moneda: </string>
+    <string name="seleccione_moneda">Seleccione moneda: </string>
+    <string name="moneda_inicial">CLP</string>
     <string name="nombre_tienda">Restaurant A</string>
     <string name="ingrese_servidor">Ingrese la URL del servidor BTCPay:</string>
     <string name="texto_ajustes">Ajustes</string>
+    <string name="icono_ajustes">⚙️</string>
     <string name="ingrese_id_tienda">Ingrese el ID de la tienda BTCPay</string>
     <string name="ingrese_nombre_local">Ingrese el nombre del local</string>
     <string name="texto_guardar">Guardar</string>
