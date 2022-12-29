@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val storeURL = "https://btcpay.icripto.cl/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
+
         val input: TextView = findViewById(R.id.input)
         val buttonBotondepago: Button = findViewById(R.id.link_twitter)
         val button1: Button = findViewById(R.id.button_1)
@@ -50,12 +49,17 @@ class MainActivity : AppCompatActivity() {
 
 
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
-        val nombreLocal : String = intent.getStringExtra("data") ?: sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
-        val monedaPredefined = intent.getStringExtra("data2") ?: sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
+        val nombreLocal = intent.getStringExtra("data1") ?: sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
+        val moneda = intent.getStringExtra("data2") ?: sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
+        val server = intent.getStringExtra("data3") ?: sharedPreferences.getString("LOCALSERVER", defaultServer).toString()
+        val localID = intent.getStringExtra("data4") ?: sharedPreferences.getString("LOCALID", defaultStoreId).toString()
 
 
-        findViewById<TextView>(R.id.moneda).setText(monedaPredefined)
-        findViewById<TextView>(R.id.tituloLocal).setText(nombreLocal)
+
+
+//        findViewById<TextView>(R.id.moneda).setText(monedaPredefined)
+        findViewById<TextView>(R.id.moneda).text = moneda
+        findViewById<TextView>(R.id.tituloLocal).text = nombreLocal
 
         buttonBorrar.setOnClickListener {
             input.text = ""
@@ -111,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                     val price: Float = input.text.toString().toFloat()
                     if (price > 0) {
 //                        val urlIcripto = "http://guibnloxo4hwe3ashh2rlg2abqqykzhldmsbcqne2togzdrdja22ohyd.onion/api/v1/invoices?storeId=D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH&price=${price}&currency=${monedaPredefined}"
-                        val urlIcripto = "${storeURL}&price=${price}&currency=${monedaPredefined}"
+                        val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&currency=${moneda}"
                         startActivity(Intent.parseUri(urlIcripto, 0))
                     }
                 } catch (e: Exception) {

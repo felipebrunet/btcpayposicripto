@@ -17,15 +17,21 @@ class ActividadAjustes : AppCompatActivity() {
 
         val defaultMoneda = "CLP"
         val defaultRestaurant = ""
-        val defaultServer = ""
+        val defaultServer = "https://btcpay.icripto.cl"
+        val defaultStoreId = "D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
 
 
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
         val savedLocal: String? = sharedPreferences.getString("LOCALNOMBRE", defaultRestaurant)
         val savedMoneda: String? = sharedPreferences.getString("LOCALMONEDA", defaultMoneda)
+        val savedServer: String? = sharedPreferences.getString("LOCALSERVER", defaultServer)
+        val savedID: String? = sharedPreferences.getString("LOCALID", defaultStoreId)
 
 
         findViewById<EditText>(R.id.NLocal).setText(savedLocal)
+        findViewById<EditText>(R.id.URLServicio).setText(savedServer)
+        findViewById<EditText>(R.id.IDTienda).setText(savedID)
+
 
         val option : Spinner = findViewById(R.id.spinner_currencies2)
         val options = arrayOf("CLP", "USD", "ARS", "EUR", "BRL", "BTC")
@@ -58,15 +64,21 @@ class ActividadAjustes : AppCompatActivity() {
 
     private fun openMainActivitySaved(moneda : String) {
         val intent = Intent(this, MainActivity::class.java)
-        val local1 = findViewById<EditText>(R.id.NLocal).text.toString()
+        val local = findViewById<EditText>(R.id.NLocal).text.toString()
+        val server = findViewById<EditText>(R.id.URLServicio).text.toString()
+        val idTienda = findViewById<EditText>(R.id.IDTienda).text.toString()
+        intent.putExtra("data1", local)
         intent.putExtra("data2", moneda)
-        intent.putExtra("data", local1)
+        intent.putExtra("data3", server)
+        intent.putExtra("data4", idTienda)
         saveData(moneda)
         startActivity(intent)
     }
 
     private fun saveData(moneda: String) {
         val nombreLocal : String = findViewById<EditText>(R.id.NLocal).text.toString()
+        val nombreServidor : String = findViewById<EditText>(R.id.URLServicio).text.toString()
+        val nombreIdTienda : String = findViewById<EditText>(R.id.IDTienda).text.toString()
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
         val editor : SharedPreferences.Editor = sharedPreferences.edit()
         editor.apply{
@@ -75,6 +87,13 @@ class ActividadAjustes : AppCompatActivity() {
         editor.apply{
             putString("LOCALMONEDA", moneda)
         }.apply()
+        editor.apply{
+            putString("LOCALSERVER", nombreServidor)
+        }.apply()
+        editor.apply{
+            putString("LOCALID", nombreIdTienda)
+        }.apply()
+
 
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show()
     }
