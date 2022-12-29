@@ -1,7 +1,9 @@
 package com.example.btcpayposicripto
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -40,22 +42,20 @@ class MainActivity : AppCompatActivity() {
         val button0: Button = findViewById(R.id.button_0)
         val buttonDot: Button = findViewById(R.id.button_dot)
         val buttonBorrar: Button = findViewById(R.id.button_borrar)
-//        var monedaPredefined = "CLP"
 
-        val nombreLocal : String = intent.getStringExtra("data") ?: ""
-        val monedaPredefined = intent.getStringExtra("data2") ?: "CLP"
-        val cuadroMoneda: TextView = findViewById(R.id.moneda)
-        cuadroMoneda.text = monedaPredefined
-        val nombreLocalText : TextView = findViewById(R.id.tituloLocal)
-        if (nombreLocal != "") {
-            nombreLocalText.text = nombreLocal
-        }
+        val defaultMoneda = "CLP"
+        val defaultLocal = "Restaurant A"
+        val defaultServer = "https://btcpay.icripto.cl"
+        val defaultStoreId = "D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
 
 
+        val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
+        val nombreLocal : String = intent.getStringExtra("data") ?: sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
+        val monedaPredefined = intent.getStringExtra("data2") ?: sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
 
-//        var monedaPredefined = "CLP"
 
-
+        findViewById<TextView>(R.id.moneda).setText(monedaPredefined)
+        findViewById<TextView>(R.id.tituloLocal).setText(nombreLocal)
 
         buttonBorrar.setOnClickListener {
             input.text = ""
@@ -88,7 +88,6 @@ class MainActivity : AppCompatActivity() {
         button9.setOnClickListener {
             input.text = addToInputText("9", input)
         }
-
         button0.setOnClickListener {
             if (input.text.isEmpty()) {
                 // Show Error Message
@@ -98,7 +97,6 @@ class MainActivity : AppCompatActivity() {
                 input.text = addToInputText("0", input)
             }
         }
-
         buttonDot.setOnClickListener {
             if (input.text.isEmpty()) {
                 input.text = addToInputText("0.", input)
@@ -128,5 +126,6 @@ class MainActivity : AppCompatActivity() {
     private fun addToInputText(buttonValue: String, input: TextView): String {
         return "${input.text}$buttonValue"
     }
+
 
 }
