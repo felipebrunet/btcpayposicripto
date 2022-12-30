@@ -21,13 +21,13 @@
     <string name="ingrese_servidor">Ingrese la URL del servidor BTCPay:</string>
     <string name="texto_ajustes">Ajustes</string>
     <string name="icono_ajustes">⚙️</string>
-    <string name="ingrese_id_tienda">Ingrese el ID de la tienda BTCPay</string>
-    <string name="ingrese_nombre_local">Ingrese el nombre del local</string>
+    <string name="ingrese_id_tienda">Ingrese el ID de la tienda BTCPay:</string>
+    <string name="ingrese_nombre_local">Ingrese el nombre del local:</string>
     <string name="texto_guardar">Guardar</string>
     <string name="texto_volver">Volver</string>
     <string name="tip_nombre_local">Nombre de Local</string>
-    <string name="ID_local">ID de local segun URL en servidor BTCPay</string>
-    <string name="URL_servidor_BTCPay">URL Tor es de tipo "'http://..'" \nURL en clearnet es del tipo "'https://..'"</string>
+    <string name="ID_local">ID de local según URL en servidor BTCPay</string>
+    <string name="URL_servidor_BTCPay">URL Tor es del tipo "'http://..'" \nURL en clearnet es del tipo "'https://..'"</string>
     <string name="id_actual">ID Actual: </string>
     <string name="servidor_actual">Servidor Actual: </string>
     <string name="github_repo" ><a href="https://github.com/felipebrunet/btcpayposicripto">Open Source</a></string>
