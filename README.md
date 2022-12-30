@@ -3,16 +3,16 @@
 ESPAÑOL:
 Esta es una aplicación para poder usar un terminal de pago en dispositivos android, ya sean teléfonos celulares Android, terminales tipo impresora de boleta Android, tablets, etc.
 Se configura al indicarle la direccion URL de una instancia de servidor BTCPAY Server que posea una tienda habilitada.
-En otras palabras, la aplicacion implementa un terminal de pago bitcoin, que puede estar conectado a cualquier infraestructura.
+En otras palabras, la aplicación implementa un terminal de pago bitcoin, que puede estar conectado a cualquier infraestructura.
 
 El caso ideal es que un locatario/a que quiera aceptar bitcoin lo que debe hacer es iniciar un nodo de bitcoin usando alguno de los sistemas plug and play, con Umbrel, Raspiblitz, Mynode, etc.
-Luego carga algo de bitcoin en la wallet asociada al nodo, y abre 1 o 2 canales de lightning con algun nodo de preferencia.
+Luego carga algo de bitcoin en la wallet asociada al nodo, y abre 1 o 2 canales de lightning con algal nodo de preferencia.
 Luego instala uno de los managers de nodo lightning como LND, o Core Lightning.
 Luego instala el programa BTCPAY server (usualmente ofrecido por los sistemas umbrel, mynode, etc) y dentro de este, crea y habilita una tienda (store).
-Luego descarga e instala la app Icripto POS en algún dispositivo de su preferencia, y luego configura el dispositivo indicandole la direccion URL de la tienda asociada.
+Luego descarga e instala la app Icripto POS en algún dispositivo de su preferencia, y luego configura el dispositivo indicándole la direccion URL de la tienda asociada.
 La dirección URL de la tienda puede ser tanto clearnet (típica) como una dirección TOR. Ambas funcionan, la diferencia radica en el tipo de browser que se abrira al dar la instrucción de pagar.
 
-Al tener ya conectada la aplicacion a la instancia deseada, el terminal de pago ya puede funcionar.
+Al tener ya conectada la aplicación a la instancia deseada, el terminal de pago ya puede funcionar.
 
 Este terminal lo que hace es definir los parametros (ingresados por el vendedor) para realizar el cobro en una ventana nueva de Google Chrome o del navegador deseado..
 Esta ventana muestra las opciones de pago que ofrece BTCPAY:
@@ -42,7 +42,7 @@ felipebrunet
 
 ENGLISH: 
 Point of Sale App for BTCPay server stores. 
-Any merchant running his/her own bitcoin node can start up a BTCPay server (via clearnet or Tor) and use this app to start receiving payments on any android device.
+Any merchant running his/her own bitcoin node (with Umbrel, Raspiblitz, Mynode, Raspibolt, etc) can start up a BTCPay server (via clearnet or Tor) and use this app to start receiving payments on any android device.
 This removes any third party. Merchants can now accept:
 - Bitcoin onchain (above certain value, can be configured)
 - Bitcoin Lightning invoice
