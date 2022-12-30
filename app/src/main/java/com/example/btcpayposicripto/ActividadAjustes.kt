@@ -23,10 +23,10 @@ class ActividadAjustes : AppCompatActivity() {
         val textView: TextView = findViewById(R.id.linkGH)
         textView.movementMethod = LinkMovementMethod.getInstance()
 
-        val defaultMoneda = "CLP"
+        val defaultMoneda = "USD"
         val defaultLocal = "Restaurant A"
-        val defaultServer = "https://btcpay.icripto.cl"
-        val defaultStoreId = "D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
+        val defaultServer = ""
+        val defaultStoreId = ""
 
 
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
@@ -46,8 +46,8 @@ class ActividadAjustes : AppCompatActivity() {
 
 
         val option : Spinner = findViewById(R.id.spinner_currencies2)
-        val options = arrayOf("CLP", "USD", "ARS", "EUR", "BRL", "BTC")
-        var moneda1 : String = savedMoneda.toString()
+        val options = arrayOf("USD", "CLP", "ARS", "EUR", "BRL", "BTC")
+        var moneda : String = savedMoneda.toString()
 
 
 
@@ -62,13 +62,13 @@ class ActividadAjustes : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                moneda1 = options[p2]
+                moneda = options[p2]
             }
         }
 
         val guardarButton = findViewById<Button>(R.id.botonGuardar)
         guardarButton.setOnClickListener {
-            openMainActivitySaved(moneda1)
+            openMainActivitySaved(moneda)
         }
 
     }
@@ -76,13 +76,13 @@ class ActividadAjustes : AppCompatActivity() {
 
     private fun openMainActivitySaved(moneda : String) {
         val intent = Intent(this, MainActivity::class.java)
-        val local = findViewById<EditText>(R.id.NLocal).text.toString()
-        val server = findViewById<EditText>(R.id.URLServicio).text.toString()
-        val idTienda = findViewById<EditText>(R.id.IDTienda).text.toString()
-        intent.putExtra("data1", local)
-        intent.putExtra("data2", moneda)
-        intent.putExtra("data3", server)
-        intent.putExtra("data4", idTienda)
+//        val local = findViewById<EditText>(R.id.NLocal).text.toString()
+//        val server = findViewById<EditText>(R.id.URLServicio).text.toString()
+//        val idTienda = findViewById<EditText>(R.id.IDTienda).text.toString()
+//        intent.putExtra("data1", local)
+//        intent.putExtra("data2", moneda)
+//        intent.putExtra("data3", server)
+//        intent.putExtra("data4", idTienda)
         saveData(moneda)
         startActivity(intent)
     }

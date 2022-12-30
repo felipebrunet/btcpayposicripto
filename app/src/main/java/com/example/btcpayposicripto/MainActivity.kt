@@ -41,18 +41,17 @@ class MainActivity : AppCompatActivity() {
         val buttonDot: Button = findViewById(R.id.button_dot)
         val buttonBorrar: Button = findViewById(R.id.button_borrar)
 
-        val defaultMoneda = "CLP"
+        val defaultMoneda = "USD"
         val defaultLocal = "Restaurant A"
-        val defaultServer = "https://btcpay.icripto.cl"
-        val defaultStoreId = "D8EcMfioGdoiXN9v1ejMth6ZBaVADfsxjocLxbw5h5yH"
+        val defaultServer = ""
+        val defaultStoreId = ""
 
 //        Loading preexisting settings. If there are none, then load the default (view the "default... constants) values.
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
         val nombreLocal = sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
-//        val nombreLocal = intent.getStringExtra("data1") ?: sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
-        val moneda = intent.getStringExtra("data2") ?: sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
-        val server = intent.getStringExtra("data3") ?: sharedPreferences.getString("LOCALSERVER", defaultServer).toString()
-        val localID = intent.getStringExtra("data4") ?: sharedPreferences.getString("LOCALID", defaultStoreId).toString()
+        val moneda = sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
+        val server = sharedPreferences.getString("LOCALSERVER", defaultServer).toString()
+        val localID = sharedPreferences.getString("LOCALID", defaultStoreId).toString()
 
 
         findViewById<TextView>(R.id.moneda).text = moneda
