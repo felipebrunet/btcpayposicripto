@@ -8,11 +8,11 @@ android {
         releasee {
         }
     }
-    namespace 'com.example.btcpayposicripto'
+    namespace 'com.felipebrunet.btcpayposicripto'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.btcpayposicripto"
+        applicationId "com.felipebrunet.btcpayposicripto"
         minSdk 21
         targetSdk 32
         versionCode 1

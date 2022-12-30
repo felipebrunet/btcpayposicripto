@@ -1,4 +1,4 @@
-package com.example.btcpayposicripto
+package com.felipebrunet.btcpayposicripto
 
 import android.annotation.SuppressLint
 import android.content.Context

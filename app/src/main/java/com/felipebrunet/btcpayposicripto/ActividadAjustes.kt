@@ -1,4 +1,4 @@
-package com.example.btcpayposicripto
+package com.felipebrunet.btcpayposicripto
 
 import android.content.Context
 import android.content.Intent
