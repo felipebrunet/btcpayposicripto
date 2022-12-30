@@ -3,10 +3,12 @@ package com.example.btcpayposicripto
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
 
 class ActividadAjustes : AppCompatActivity() {
 
@@ -17,6 +19,9 @@ class ActividadAjustes : AppCompatActivity() {
 
         findViewById<TextView>(R.id.servidorActualValor).setTextIsSelectable(true)
         findViewById<TextView>(R.id.IDActualValor).setTextIsSelectable(true)
+
+        val textView: TextView = findViewById(R.id.linkGH)
+        textView.movementMethod = LinkMovementMethod.getInstance()
 
         val defaultMoneda = "CLP"
         val defaultLocal = "Restaurant A"

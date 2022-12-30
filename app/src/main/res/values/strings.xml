@@ -30,4 +30,6 @@
     <string name="URL_servidor_BTCPay">URL Tor es de tipo "'http://..'" \nURL en clearnet es del tipo "'https://..'"</string>
     <string name="id_actual">ID Actual: </string>
     <string name="servidor_actual">Servidor Actual: </string>
+    <string name="github_repo" ><a href="https://github.com/felipebrunet/btcpayposicripto">Open Source</a></string>
+    <string name="logo_github">Logo Github</string>
 </resources>
