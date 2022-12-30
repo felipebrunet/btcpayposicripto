@@ -168,7 +168,6 @@
         android:id="@+id/servidorActual"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/servidor_actual"
@@ -177,10 +176,10 @@
 
     <TextView
         android:id="@+id/servidorActualValor"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginStart="10dp"
-        android:gravity="center"
+        tools:text="hoalalalalalal"
         app:layout_constraintStart_toEndOf="@+id/servidorActual"
         app:layout_constraintTop_toTopOf="@+id/servidorActual" />
 
@@ -188,7 +187,6 @@
         android:id="@+id/IDActual"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/id_actual"
@@ -198,9 +196,8 @@
     <TextView
         android:id="@+id/IDActualValor"
         android:layout_width="260dp"
-        android:layout_height="67dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
         app:layout_constraintStart_toEndOf="@+id/IDActual"
         app:layout_constraintTop_toTopOf="@+id/IDActual" />
 

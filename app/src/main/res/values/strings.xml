@@ -29,5 +29,5 @@
     <string name="ID_local">ID de local segun URL en servidor BTCPay</string>
     <string name="URL_servidor_BTCPay">URL Tor es de tipo "'http://..'" \nURL en clearnet es del tipo "'https://..'"</string>
     <string name="id_actual">ID Actual: </string>
-    <string name="servidor_actual">ID Actual: </string>
+    <string name="servidor_actual">Servidor Actual: </string>
 </resources>
