@@ -153,7 +153,7 @@
         android:layout_height="76dp"
         android:backgroundTint="@color/gray1"
         android:text="@string/boton_pagar"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
