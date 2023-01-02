@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         val defaultLocal = "Restaurant A"
         val defaultServer = ""
         val defaultStoreId = ""
+//        val defaultTips = "no"
 
 //        Loading preexisting settings. If there are none, then load the default (view the "default... constants) values.
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         val moneda = sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
         val server = sharedPreferences.getString("LOCALSERVER", defaultServer).toString()
         val localID = sharedPreferences.getString("LOCALID", defaultStoreId).toString()
+//        val tips = sharedPreferences.getString("STATUSTIPS", defaultTips).toString()
 
 
         findViewById<TextView>(R.id.moneda).text = moneda
@@ -131,6 +133,5 @@ class MainActivity : AppCompatActivity() {
     private fun addToInputText(buttonValue: String, input: TextView): String {
         return "${input.text}$buttonValue"
     }
-
 
 }

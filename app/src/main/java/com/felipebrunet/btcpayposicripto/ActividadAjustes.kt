@@ -1,5 +1,6 @@
 package com.felipebrunet.btcpayposicripto
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -30,6 +31,7 @@ class ActividadAjustes : AppCompatActivity() {
         val defaultLocal = "Restaurant A"
         val defaultServer = ""
         val defaultStoreId = ""
+        val defaultTips = "no"
 
 //    Loading current saved parameters. Same parameters from above: Currency, Merchant Name, Server URL, Store ID
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
@@ -37,6 +39,7 @@ class ActividadAjustes : AppCompatActivity() {
         val savedMoneda: String? = sharedPreferences.getString("LOCALMONEDA", defaultMoneda)
         val savedServer: String? = sharedPreferences.getString("LOCALSERVER", defaultServer)
         val savedID: String? = sharedPreferences.getString("LOCALID", defaultStoreId)
+        val tips : String? = sharedPreferences.getString("STATUSTIPS", defaultTips)
 
 //    Filling displayed server data (bottom of screen) with server parameters.
         findViewById<TextView>(R.id.servidorActualValor).text = savedServer
@@ -46,6 +49,7 @@ class ActividadAjustes : AppCompatActivity() {
         findViewById<EditText>(R.id.NLocal).setText(savedLocal)
         findViewById<EditText>(R.id.URLServicio).setText(savedServer)
         findViewById<EditText>(R.id.IDTienda).setText(savedID)
+        findViewById<Switch>(R.id.tips1).isChecked = tips == "yes"
 
 //    Setup the dropdown options for currency selection
         val option : Spinner = findViewById(R.id.spinner_currencies2)
@@ -70,6 +74,7 @@ class ActividadAjustes : AppCompatActivity() {
             }
         }
 
+//    Setup of the "Save" button
         val guardarButton = findViewById<Button>(R.id.botonGuardar)
         guardarButton.setOnClickListener {
             openMainActivitySaved(moneda)
@@ -80,23 +85,26 @@ class ActividadAjustes : AppCompatActivity() {
 
     private fun openMainActivitySaved(moneda : String) {
         val intent = Intent(this, MainActivity::class.java)
-//        val local = findViewById<EditText>(R.id.NLocal).text.toString()
-//        val server = findViewById<EditText>(R.id.URLServicio).text.toString()
-//        val idTienda = findViewById<EditText>(R.id.IDTienda).text.toString()
-//        intent.putExtra("data1", local)
-//        intent.putExtra("data2", moneda)
-//        intent.putExtra("data3", server)
-//        intent.putExtra("data4", idTienda)
         saveData(moneda)
         startActivity(intent)
     }
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private fun saveData(moneda: String) {
+        val tipsSwitch : Switch = findViewById(R.id.tips1)
+        val tips: String = if (tipsSwitch.isChecked) {
+            "yes"
+        } else {
+            "no"
+        }
         val nombreLocal : String = findViewById<EditText>(R.id.NLocal).text.toString()
         val nombreServidor : String = findViewById<EditText>(R.id.URLServicio).text.toString()
         val nombreIdTienda : String = findViewById<EditText>(R.id.IDTienda).text.toString()
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
         val editor : SharedPreferences.Editor = sharedPreferences.edit()
+        editor.apply{
+            putString("STATUSTIPS", tips)
+        }.apply()
         editor.apply{
             putString("LOCALNOMBRE", nombreLocal)
         }.apply()
@@ -109,7 +117,6 @@ class ActividadAjustes : AppCompatActivity() {
         editor.apply{
             putString("LOCALID", nombreIdTienda)
         }.apply()
-
 
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show()
     }
