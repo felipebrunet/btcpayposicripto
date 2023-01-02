@@ -16,3 +16,4 @@ local.properties
 .ssh
 *.apk
 .apk
+app/release
