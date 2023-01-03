@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         val defaultLocal = "Restaurant A"
         val defaultServer = ""
         val defaultStoreId = ""
-//        val defaultTips = "no"
+        val defaultTips = "no"
 
 //        Loading preexisting settings. If there are none, then load the default (view the "default... constants) values.
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         val moneda = sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
         val server = sharedPreferences.getString("LOCALSERVER", defaultServer).toString()
         val localID = sharedPreferences.getString("LOCALID", defaultStoreId).toString()
-//        val tips = sharedPreferences.getString("STATUSTIPS", defaultTips).toString()
+        val tips = sharedPreferences.getString("STATUSTIPS", defaultTips).toString()
 
 
         findViewById<TextView>(R.id.moneda).text = moneda
@@ -114,10 +114,18 @@ class MainActivity : AppCompatActivity() {
         buttonBotondepago.setOnClickListener{
             if (input.text.isNotEmpty()) {
                 try {
-                    val price: Float = input.text.toString().toFloat()
+                    val price: Double = input.text.toString().toDouble()
                     if (price > 0) {
-                        val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&checkoutDesc=${nombreLocal}&currency=${moneda}"
-                        startActivity(Intent.parseUri(urlIcripto, 0))
+
+                        if (tips == "yes") {
+                            popUpWindow()
+//                            val tipValue = 0.1 // TODO bring back selected tip value
+//                            val finalPrice = price * (1 + tipValue)
+
+//                            goPayment(server, localID, finalPrice, nombreLocal, moneda)
+                        } else {
+                            goPayment(server, localID, price, nombreLocal, moneda)
+                        }
                     }
                 } catch (e: Exception) {
                     input.text = "Error"
@@ -127,11 +135,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
-//    Generic function for adding text to the checkout screen
+    //    Generic function for adding text to the checkout screen
     private fun addToInputText(buttonValue: String, input: TextView): String {
         return "${input.text}$buttonValue"
+    }
+
+    private fun goPayment(server: String, localID: String, price: Double, nombreLocal: String, moneda: String) {
+        val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&checkoutDesc=${nombreLocal}&currency=${moneda}"
+        startActivity(Intent.parseUri(urlIcripto, 0))
+    }
+
+    private fun popUpWindow() {
+//        val showPopUp = CustomDialogFragment()
+        val showPopUp = PopUpFragment()
+        showPopUp.show(supportFragmentManager, "showPopUp")
     }
 
 }

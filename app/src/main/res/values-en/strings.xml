@@ -20,11 +20,11 @@
     <string name="seleccione_moneda">Select currency: </string>
     <string name="moneda_inicial">USD</string>
     <string name="nombre_tienda">Restaurant A</string>
-    <string name="ingrese_servidor">Enter BTCPay server URL:</string>
+    <string name="ingrese_servidor">Enter BTCPay server URL: (required)</string>
     <string name="texto_ajustes">Settings</string>
     <string name="icono_ajustes">⚙️</string>
-    <string name="ingrese_id_tienda">Enter BTCPay store ID:</string>
-    <string name="ingrese_nombre_local">Enter store name:</string>
+    <string name="ingrese_id_tienda">Enter BTCPay store ID: (required)</string>
+    <string name="ingrese_nombre_local">Enter store name: (optional)</string>
     <string name="texto_guardar">Save</string>
     <string name="texto_volver">Go back</string>
     <string name="tip_nombre_local">Store Name</string>
@@ -35,4 +35,10 @@
     <string name="github_repo" ><a href="https://github.com/felipebrunet/btcpayposicripto">Open Source</a></string>
     <string name="logo_github">Logo Github</string>
     <string name="switch_propinas">Tips</string>
+    <string name="mensaje_propina">Set tip</string>
+    <string name="sin_propina">no tip</string>
+    <string name="_10pc">10%</string>
+    <string name="_15pc">15%</string>
+    <string name="_20pc">20%</string>
+    <string name="_5pc">5%</string>
 </resources>

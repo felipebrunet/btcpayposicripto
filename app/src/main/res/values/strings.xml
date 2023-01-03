@@ -18,11 +18,11 @@
     <string name="seleccione_moneda">Seleccione moneda: </string>
     <string name="moneda_inicial">CLP</string>
     <string name="nombre_tienda">Restaurant A</string>
-    <string name="ingrese_servidor">Ingrese la URL del servidor BTCPay:</string>
+    <string name="ingrese_servidor">Ingrese la URL del servidor BTCPay: (requerido)</string>
     <string name="texto_ajustes">Ajustes</string>
     <string name="icono_ajustes">⚙️</string>
-    <string name="ingrese_id_tienda">Ingrese el ID de la tienda BTCPay:</string>
-    <string name="ingrese_nombre_local">Ingrese el nombre del local:</string>
+    <string name="ingrese_id_tienda">Ingrese el ID de la tienda BTCPay: (requerido)</string>
+    <string name="ingrese_nombre_local">Ingrese el nombre del local: (opcional)</string>
     <string name="texto_guardar">Guardar</string>
     <string name="texto_volver">Volver</string>
     <string name="tip_nombre_local">Nombre de Local</string>
@@ -30,7 +30,13 @@
     <string name="URL_servidor_BTCPay">URL Tor es del tipo "'http://..'" \nURL en clearnet es del tipo "'https://..'"</string>
     <string name="id_actual">ID Actual: </string>
     <string name="servidor_actual">Servidor Actual: </string>
-    <string name="github_repo" ><a href="https://github.com/felipebrunet/btcpayposicripto">Open Source</a></string>
+    <string name="github_repo"><a href="https://github.com/felipebrunet/btcpayposicripto">Open Source</a></string>
     <string name="logo_github">Logo Github</string>
     <string name="switch_propinas">Propinas</string>
+    <string name="mensaje_propina">Ingrese Propina</string>
+    <string name="sin_propina">sin propina</string>
+    <string name="_10pc">10%</string>
+    <string name="_15pc">15%</string>
+    <string name="_20pc">20%</string>
+    <string name="_5pc">5%</string>
 </resources>
