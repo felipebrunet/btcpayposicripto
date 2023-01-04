@@ -41,6 +41,6 @@
     <string name="_15pc">15%</string>
     <string name="_20pc">20%</string>
     <string name="_5pc">5%</string>
-    <string name="cifra_ini">⬅set server</string>
+    <string name="cifra_ini">⬅Set server</string>
     <string name="tip_message">The tip is</string>
 </resources>

@@ -65,80 +65,84 @@ class MainActivity : AppCompatActivity() {
             input.text = addToInputText(initString, input)
         }
 
-//        Setting the functions of buttons
-        buttonBorrar.setOnClickListener {
-            input.text = ""
-            input.setTextColor(ContextCompat.getColor(this, R.color.black))
-        }
-        button1.setOnClickListener {
-            input.text = addToInputText("1", input)
-        }
-        button2.setOnClickListener {
-            input.text = addToInputText("2", input)
-        }
-        button3.setOnClickListener {
-            input.text = addToInputText("3", input)
-        }
-        button4.setOnClickListener {
-            input.text = addToInputText("4", input)
-        }
-        button5.setOnClickListener {
-            input.text = addToInputText("5", input)
-        }
-        button6.setOnClickListener {
-            input.text = addToInputText("6", input)
-        }
-        button7.setOnClickListener {
-            input.text = addToInputText("7", input)
-        }
-        button8.setOnClickListener {
-            input.text = addToInputText("8", input)
-        }
-        button9.setOnClickListener {
-            input.text = addToInputText("9", input)
-        }
-        button0.setOnClickListener {
-            if (input.text.isEmpty()) {
-                // Show Error Message
-                input.text = addToInputText("", input)
+        else {
+
+    //        Setting the functions of buttons
+            buttonBorrar.setOnClickListener {
+                input.text = ""
+                input.setTextColor(ContextCompat.getColor(this, R.color.black))
             }
-            else {
-                input.text = addToInputText("0", input)
+            button1.setOnClickListener {
+                input.text = addToInputText("1", input)
             }
-        }
-        buttonDot.setOnClickListener {
-            if (input.text.isEmpty()) {
-                input.text = addToInputText("0.", input)
-            } else {
-                input.text = addToInputText(".", input)
+            button2.setOnClickListener {
+                input.text = addToInputText("2", input)
             }
-        }
-
-
-//        Setting the function of the "Pay" button
-        buttonBotondepago.setOnClickListener{
-            if (input.text.isNotEmpty()) {
-                try {
-                    val price: Double = input.text.toString().toDouble()
-                    if (price > 0) {
-
-                        if (tips == "yes") {
-                            popUpWindow()
-//                            val tipValue = 0.1 // TODO bring back selected tip value
-//                            val finalPrice = price * (1 + tipValue)
-
-//                            goPayment(server, localID, finalPrice, nombreLocal, moneda)
-                        } else {
-                            goPayment(server, localID, price, nombreLocal, moneda)
-                        }
-                    }
-                } catch (e: Exception) {
-                    input.text = "Error"
-                    input.setTextColor(ContextCompat.getColor(this, R.color.red))
+            button3.setOnClickListener {
+                input.text = addToInputText("3", input)
+            }
+            button4.setOnClickListener {
+                input.text = addToInputText("4", input)
+            }
+            button5.setOnClickListener {
+                input.text = addToInputText("5", input)
+            }
+            button6.setOnClickListener {
+                input.text = addToInputText("6", input)
+            }
+            button7.setOnClickListener {
+                input.text = addToInputText("7", input)
+            }
+            button8.setOnClickListener {
+                input.text = addToInputText("8", input)
+            }
+            button9.setOnClickListener {
+                input.text = addToInputText("9", input)
+            }
+            button0.setOnClickListener {
+                if (input.text.isEmpty()) {
+                    // Show Error Message
+                    input.text = addToInputText("", input)
                 }
+                else {
+                    input.text = addToInputText("0", input)
+                }
+            }
+            buttonDot.setOnClickListener {
+                if (input.text.isEmpty()) {
+                    input.text = addToInputText("0.", input)
+                } else {
+                    input.text = addToInputText(".", input)
+                }
+            }
 
+
+    //        Setting the function of the "Pay" button
+            buttonBotondepago.setOnClickListener{
+                if (input.text.isNotEmpty()) {
+                    try {
+                        val price: Double = input.text.toString().toDouble()
+                        if (price > 0) {
+
+                            if (tips == "yes") {
+                                popUpWindow()
+    //                            val tipValue = 0.1 // TODO bring back selected tip value
+    //                            val finalPrice = price * (1 + tipValue)
+
+    //                            goPayment(server, localID, finalPrice, nombreLocal, moneda)
+                            } else {
+                                goPayment(server, localID, price, nombreLocal, moneda)
+                            }
+                        }
+                    } catch (e: Exception) {
+                        input.text = "Error"
+                        input.setTextColor(ContextCompat.getColor(this, R.color.red))
+                    }
+
+                }
             }
         }
+
     }
     //    Generic function for adding text to the checkout screen
     private fun addToInputText(buttonValue: String, input: TextView): String {
