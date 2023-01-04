@@ -17,30 +17,36 @@ class PopUpFragment : DialogFragment() {
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_pop_up, container, false)
         var tip : Double
+        val tipMessage : String = getString(R.string.tip_message)
+        var tipData = "0%"
 
         rootView.findViewById<Button>(R.id.noTipButton).setOnClickListener {
             tip = 0.0
-            Toast.makeText(context, "La propina es  $tip", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, tipMessage + " $tipData", Toast.LENGTH_SHORT).show()
             dismiss()
         }
         rootView.findViewById<Button>(R.id._5pcButton).setOnClickListener {
             tip = 0.05
-            Toast.makeText(context, "La propina es  $tip", Toast.LENGTH_SHORT).show()
+            tipData = "5%"
+            Toast.makeText(context, tipMessage + " $tipData", Toast.LENGTH_SHORT).show()
             dismiss()
         }
         rootView.findViewById<Button>(R.id._10pcButton).setOnClickListener {
             tip = 0.1
-            Toast.makeText(context, "La propina es  $tip", Toast.LENGTH_SHORT).show()
+            tipData = "10%"
+            Toast.makeText(context, tipMessage + " $tipData", Toast.LENGTH_SHORT).show()
             dismiss()
         }
         rootView.findViewById<Button>(R.id._15pcButton).setOnClickListener {
             tip = 0.15
-            Toast.makeText(context, "La propina es  $tip", Toast.LENGTH_SHORT).show()
+            tipData = "15%"
+            Toast.makeText(context, tipMessage + " $tipData", Toast.LENGTH_SHORT).show()
             dismiss()
         }
         rootView.findViewById<Button>(R.id._20pcButton).setOnClickListener {
             tip = 0.2
-            Toast.makeText(context, "La propina es  $tip", Toast.LENGTH_SHORT).show()
+            tipData = "20%"
+            Toast.makeText(context, tipMessage + " $tipData", Toast.LENGTH_SHORT).show()
             dismiss()
         }
 

@@ -59,6 +59,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.moneda).text = moneda
         findViewById<TextView>(R.id.tituloLocal).text = nombreLocal
 
+        val initString: String = getString(R.string.cifra_ini)
+
+        if (server.isEmpty()) {
+            input.text = addToInputText(initString, input)
+        }
 
 //        Setting the functions of buttons
         buttonBorrar.setOnClickListener {
