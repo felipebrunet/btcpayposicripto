@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         val defaultTips = "no"
 
 //        Loading preexisting settings. If there are none, then load the default (view the "default... constants) values.
+
         val sharedPreferences : SharedPreferences = getSharedPreferences("sharedPres", Context.MODE_PRIVATE)
         val nombreLocal = sharedPreferences.getString("LOCALNOMBRE", defaultLocal).toString()
         val moneda = sharedPreferences.getString("LOCALMONEDA", defaultMoneda).toString()
@@ -68,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         else {
 
     //        Setting the functions of buttons
+
             buttonBorrar.setOnClickListener {
                 input.text = ""
                 input.setTextColor(ContextCompat.getColor(this, R.color.black))
@@ -125,11 +128,7 @@ class MainActivity : AppCompatActivity() {
                         if (price > 0) {
 
                             if (tips == "yes") {
-                                popUpWindow()
-    //                            val tipValue = 0.1 // TODO bring back selected tip value
-    //                            val finalPrice = price * (1 + tipValue)
-
-    //                            goPayment(server, localID, finalPrice, nombreLocal, moneda)
+                                payWithTip(server, localID, price, nombreLocal, moneda)
                             } else {
                                 goPayment(server, localID, price, nombreLocal, moneda)
                             }
@@ -142,22 +141,39 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
-    //    Generic function for adding text to the checkout screen
+
+//    Generic function for adding text to the checkout screen
     private fun addToInputText(buttonValue: String, input: TextView): String {
         return "${input.text}$buttonValue"
     }
 
+//    Generic function for generating invoice, with all parameters required
     private fun goPayment(server: String, localID: String, price: Double, nombreLocal: String, moneda: String) {
         val urlIcripto = "${server}/api/v1/invoices?storeId=${localID}&price=${price}&checkoutDesc=${nombreLocal}&currency=${moneda}"
         startActivity(Intent.parseUri(urlIcripto, 0))
     }
 
-    private fun popUpWindow() {
-//        val showPopUp = CustomDialogFragment()
-        val showPopUp = PopUpFragment()
-        showPopUp.show(supportFragmentManager, "showPopUp")
+    private fun payWithTip(server: String, localID: String, price: Double, nombreLocal: String, moneda: String) {
+        val noTip = R.string.no_tip
+        var tipValue: Double
+        val tipString = getString(noTip)
+        val tipMessage = R.string.tip_message
+        val items = arrayOf(tipString, "5%", "10%", "15%", "20%")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(tipMessage)
+        builder.setItems(items) { _, which->
+            tipValue = when (items[which]) {
+                "5%" -> 1.05
+                "10%" -> 1.1
+                "15%" -> 1.15
+                "20%" -> 1.2
+                else -> { // Note the block
+                    1.0
+                }
+            }
+            goPayment(server, localID, price*tipValue, nombreLocal, moneda)
+        }
+        builder.show()
     }
-
 }

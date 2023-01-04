@@ -33,12 +33,8 @@
     <string name="github_repo"><a href="https://github.com/felipebrunet/btcpayposicripto">Open Source</a></string>
     <string name="logo_github">Logo Github</string>
     <string name="switch_propinas">Propinas</string>
-    <string name="mensaje_propina">Ingrese Propina</string>
-    <string name="sin_propina">sin propina</string>
-    <string name="_10pc">10%</string>
-    <string name="_15pc">15%</string>
-    <string name="_20pc">20%</string>
-    <string name="_5pc">5%</string>
     <string name="cifra_ini">⬅Setear servidor</string>
-    <string name="tip_message">La propina es</string>
+    <string name="tip_message">Indicar propina</string>
+    <string name="no_tip">Sin propina</string>
+
 </resources>
