@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity() {
                 "10%" -> 1.1
                 "15%" -> 1.15
                 "20%" -> 1.2
-                else -> { // Note the block
+                else -> {
                     1.0
                 }
             }
