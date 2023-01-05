@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         val initString: String = getString(R.string.cifra_ini)
 
-        if (server.isEmpty()) {
+        if (server.isEmpty() || localID.isEmpty()) {
             input.text = addToInputText(initString, input)
         }
 
