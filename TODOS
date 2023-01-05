@@ -4,6 +4,7 @@ TODOS:
 - Load tipping switch state to main activity.               Done
 - Implement tipping selection screen before URL call        Done
 - Implement URL call including selected tip                 Done
+- Add version number in the settings screen                 Done
 - Implement adding calculator in number pad
 - Define tutorial for getting Store ID in BTCPay server.
 - Include layout files for all screen sizes (posponed)

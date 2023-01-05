@@ -26,9 +26,8 @@
         android:layout_width="120dp"
         android:layout_height="44dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
         android:background="@drawable/myborder"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/TextoServidor"
         app:layout_constraintTop_toBottomOf="@+id/TextoAjustes">
 
         <Spinner
@@ -42,7 +41,7 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="210dp"
+        android:layout_width="225dp"
         android:layout_height="44dp"
         android:gravity="center"
         android:text="@string/seleccione_moneda"
@@ -53,7 +52,7 @@
 
     <TextView
         android:id="@+id/TextoServidor"
-        android:layout_width="348dp"
+        android:layout_width="350dp"
         android:layout_height="20dp"
         android:layout_marginTop="10dp"
         android:gravity="start"
@@ -197,6 +196,16 @@
         app:layout_constraintStart_toEndOf="@+id/IDActual"
         app:layout_constraintTop_toTopOf="@+id/IDActual" />
 
+
+    <TextView
+        android:id="@+id/versionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_version"
+        app:layout_constraintBottom_toTopOf="@+id/linkGH"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/linkGH"
         android:layout_width="wrap_content"
@@ -204,7 +213,6 @@
         android:text="@string/github_repo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IDActual" />
 

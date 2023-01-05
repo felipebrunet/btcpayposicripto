@@ -36,5 +36,7 @@
     <string name="cifra_ini">⬅Setear servidor</string>
     <string name="tip_message">Indicar propina</string>
     <string name="no_tip">Sin propina</string>
+    <string name="text_version">Icripto POS V1.1.0</string>
+
 
 </resources>
