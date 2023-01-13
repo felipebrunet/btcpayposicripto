@@ -53,7 +53,12 @@ class ActividadAjustes : AppCompatActivity() {
 
 //    Setup the dropdown options for currency selection
         val option : Spinner = findViewById(R.id.spinner_currencies2)
-        val options = arrayOf("USD", "EUR", "AED", "ARS", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "GBP", "INR", "JPY", "KRW", "MXN", "NGN", "RUB", "ZAR", "BTC")
+        val options : Array<String>
+        if (savedMoneda == null) {
+            options = arrayOf("USD", "EUR", "AED", "ARS", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "GBP", "INR", "JPY", "KRW", "MXN", "NGN", "RUB", "ZAR", "BTC")
+        } else {
+            options = arrayOf(savedMoneda) + arrayOf("USD", "EUR", "AED", "ARS", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "GBP", "INR", "JPY", "KRW", "MXN", "NGN", "RUB", "ZAR", "BTC").filter{s -> s != savedMoneda}
+        }
         var moneda : String = savedMoneda.toString()
 
 
