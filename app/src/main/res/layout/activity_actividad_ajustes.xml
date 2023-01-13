@@ -19,7 +19,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
@@ -34,7 +35,8 @@
             android:id="@+id/spinner_currencies2"
             android:layout_width="120dp"
             android:layout_height="42dp"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </FrameLayout>
 
@@ -47,7 +49,8 @@
         android:text="@string/seleccione_moneda"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/TextoServidor"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
+        app:layout_constraintTop_toTopOf="@+id/frameLayout2"
+        tools:ignore="TextSizeCheck" />
 
 
     <TextView
@@ -60,7 +63,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tips1" />
+        app:layout_constraintTop_toBottomOf="@+id/tips1"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/URLServicio"
@@ -88,7 +92,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/URLServicio"
         app:layout_constraintStart_toStartOf="@+id/URLServicio"
-        app:layout_constraintTop_toBottomOf="@+id/URLServicio" />
+        app:layout_constraintTop_toBottomOf="@+id/URLServicio"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/IDTienda"
@@ -103,7 +108,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/TextoIDTienda"
         app:layout_constraintStart_toStartOf="@+id/TextoIDTienda"
-        app:layout_constraintTop_toBottomOf="@+id/TextoIDTienda" />
+        app:layout_constraintTop_toBottomOf="@+id/TextoIDTienda"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
     <TextView
@@ -116,7 +122,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/IDTienda"
         app:layout_constraintStart_toStartOf="@+id/IDTienda"
-        app:layout_constraintTop_toBottomOf="@+id/IDTienda" />
+        app:layout_constraintTop_toBottomOf="@+id/IDTienda"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/NLocal"
@@ -131,7 +138,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/TextoNombRestaurant"
         app:layout_constraintStart_toStartOf="@+id/TextoNombRestaurant"
-        app:layout_constraintTop_toBottomOf="@+id/TextoNombRestaurant" />
+        app:layout_constraintTop_toBottomOf="@+id/TextoNombRestaurant"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
     <Button
@@ -214,7 +222,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IDActual" />
+        app:layout_constraintTop_toBottomOf="@+id/IDActual"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -235,7 +244,7 @@
         android:text="@string/switch_propinas"
         app:layout_constraintStart_toStartOf="@+id/TextoServidor"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

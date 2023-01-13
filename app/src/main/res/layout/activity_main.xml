@@ -20,6 +20,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/moneda"
         app:layout_constraintTop_toBottomOf="@+id/tituloLocal"
+        tools:ignore="TextSizeCheck"
         tools:text="@string/cifra_ini"
         tools:visibility="visible" />
 
@@ -34,7 +35,8 @@
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moneda">
+        app:layout_constraintTop_toBottomOf="@+id/moneda"
+        tools:ignore="TextSizeCheck">
 
         <TableRow>
 
@@ -139,7 +141,8 @@
                 android:layout_gravity="center"
                 android:height="90dp"
                 android:text="@string/borrar"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="TextContrastCheck" />
 
 
         </TableRow>
@@ -175,7 +178,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/moneda"
