@@ -39,4 +39,5 @@
     <string name="tip_message">Select tip</string>
     <string name="no_tip">No tip</string>
     <string name="text_version">Icripto POS V1.2.0</string>
+    <string name="rueda_desc">Settings</string>
 </resources>

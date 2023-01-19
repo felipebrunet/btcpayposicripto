@@ -37,6 +37,8 @@
     <string name="tip_message">Indicar propina</string>
     <string name="no_tip">Sin propina</string>
     <string name="text_version">Icripto POS V1.2.0</string>
+    <string name="rueda_desc">Ajustes</string>
+
 
 
 </resources>
