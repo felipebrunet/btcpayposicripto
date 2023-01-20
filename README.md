@@ -1,5 +1,9 @@
 # Icripto POS (Readme in Español and English)
 
+Play Store URL:
+https://play.google.com/store/apps/details?id=com.felipebrunet.btcpayposicripto
+
+
 ENGLISH: 
 Point of Sale App for BTCPay server stores. 
 Any merchant running his/her own bitcoin node (with Umbrel, Raspiblitz, MyNode, etc) with some lightning channels can start up a BTCPay server (URL can be clearnet or even Onion address) and use this app to start receiving payments on any android device.
