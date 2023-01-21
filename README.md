@@ -30,7 +30,7 @@ Thank you for everyone that made this possible:
 - Bitcoin Core developers.
 - Satoshi Nakamoto
 
-felipebrunet (LNAddress for tips: tips@btcpay.icripto.cl)
+felipebrunet (LNAddress for tips: ⚡tips@btcpay.icripto.cl)
 
 
 ESPAÑOL:
@@ -70,5 +70,5 @@ Gracias a todos los que han hecho posible que esta aplicación funcione:
 - Desarrolladores de Bitcoin Core.
 - Satoshi Nakamoto
 
-felipebrunet (LNAddress: tips@btcpay.icripto.cl)
+felipebrunet (LNAddress: ⚡tips@btcpay.icripto.cl)
 
