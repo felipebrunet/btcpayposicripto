@@ -1,7 +1,13 @@
 # Icripto POS (Readme in Español and English)
 
-Play Store URL:
-https://play.google.com/store/apps/details?id=com.felipebrunet.btcpayposicripto
+This repo has been archived.
+
+The app that replaced this one is in the following repo:
+https://github.com/felipebrunet/icriptopos
+
+The Play store URL is:
+https://play.google.com/store/apps/details?id=cl.icripto.icriptopos
+
 
 
 ENGLISH: 
@@ -30,7 +36,7 @@ Thank you for everyone that made this possible:
 - Bitcoin Core developers.
 - Satoshi Nakamoto
 
-felipebrunet (LNAddress for tips: ⚡tips@btcpay.icripto.cl)
+felipebrunet (LNAddress for tips: ⚡felipe@walletofsatoshi.com)
 
 
 ESPAÑOL:
@@ -70,5 +76,5 @@ Gracias a todos los que han hecho posible que esta aplicación funcione:
 - Desarrolladores de Bitcoin Core.
 - Satoshi Nakamoto
 
-felipebrunet (LNAddress: ⚡tips@btcpay.icripto.cl)
+felipebrunet (LNAddress: ⚡felipe@walletofsatoshi.com)
 
